@@ -4,22 +4,33 @@
       <q-list bordered separator>
         <q-item v-for="entry in entries" key="entry.id">
           <q-item-section
-          class="text-wight-bold"
-          :class="useAmountColorClass(entry.amount)"
+            class="text-wight-bold"
+            :class="useAmountColorClass(entry.amount)"
           >
             {{ entry.name }}
           </q-item-section>
 
           <q-item-section
-
-          class="text-wight-bold"
-          :class="useAmountColorClass(entry.amount)"
-          side>
+            class="text-wight-bold"
+            :class="useAmountColorClass(entry.amount)"
+            side
+          >
             {{ useCurrencify(entry.amount) }}
           </q-item-section>
         </q-item>
       </q-list>
     </div>
+    <q-footer>
+      <div class="row q-pa-sm q-col-gutter-sm">
+        <div class="col">
+          <q-input placeholder="Name" bg-color="white" outlined  dense/>
+        </div>
+        <div class="col">
+          <q-input input-class="text-right" placeholder="Amount" bg-color="white" type="number" step="0.01" dense/>
+        </div>
+        <div class="col col-auto">  <q-btn round color="primary" icon="add" /></div>
+      </div>
+    </q-footer>
   </q-page>
 </template>
 
@@ -56,9 +67,5 @@ const entries = ref([
     name: "Unknown",
     amount: 0,
   },
-
-  ])
-
-
-
+]);
 </script>
