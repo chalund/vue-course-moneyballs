@@ -4,12 +4,15 @@
       <q-list bordered separator>
         <q-item v-for="entry in entries" key="entry.id">
           <q-item-section
+          class="text-wight-bold"
           :class="useAmountColorClass(entry.amount)"
           >
             {{ entry.name }}
           </q-item-section>
 
           <q-item-section
+
+          class="text-wight-bold"
           :class="useAmountColorClass(entry.amount)"
           side>
             {{ useCurrencify(entry.amount) }}
